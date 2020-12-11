@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Operation</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                {% for stock in stocks %}
+                <tr>
+                    <td> {{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.operation }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.date }}</td>
+                    <td>{{ stock.time }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
